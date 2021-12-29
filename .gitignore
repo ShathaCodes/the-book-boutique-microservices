@@ -1,0 +1,10 @@
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+/src/main/resources
+src/main/resources
+/src/main/resources/
+bin/src/main/resources/application.properties
+/bin/src/main/resources/application.properties
