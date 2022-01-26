@@ -64,17 +64,17 @@ public class BookController {
 	}
 	
 	@GetMapping("/")
-    public Iterable<Book> getProducts(){
+    public Iterable<Book> getBooks(){
         return this.service.findAll();
     }
 
     @GetMapping("/{id}")
-    public Book getProductByRef(@PathVariable String id){
+    public Book getBooksById(@PathVariable String id){
         return this.service.findOne(id);
     }
     
     @GetMapping("/search")
-    public Iterable<Book> searchLogDataByTerm(@RequestParam("title") String title)
+    public Iterable<Book> searchBooksByTitle(@RequestParam("title") String title)
     {
         return this.service.findByTitle(title);
     }
