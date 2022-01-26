@@ -74,27 +74,4 @@ public class BookController {
 		return ResponseEntity.noContent().build();
 	}
 
-	@PostMapping("/produce")
-	void produce() {
-
-		try {
-			u.sendData(new Book(1, "lol", "lol", 5, "horror"));
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-	}
-
-	@PostMapping("/consume")
-	void consume() {
-
-		try {
-			u.consumeData();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-
 }

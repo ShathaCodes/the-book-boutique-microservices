@@ -34,39 +34,4 @@ public class Utils {
 		}
 	}
 
-	public void consumeData() throws Exception {
-		ConnectionFactory factory = new ConnectionFactory();
-		factory.setHost("localhost");
-		com.rabbitmq.client.Connection connection = factory.newConnection();
-		Channel channel = connection.createChannel();
-
-		channel.queueDeclare("save_book", false, false, false, null);
-		System.out.println(" [*] Waiting for messages. To exit press CTRL+C");
-
-		DeliverCallback deliverCallback = (consumerTag, delivery) -> {
-			String message = new String(delivery.getBody(), "UTF-8");
-			System.out.println("message   " + message);
-			Book book = gson.fromJson(message, Book.class);
-			System.out.println(book);
-
-		};
-
-		channel.basicConsume("save_book", true, deliverCallback, consumerTag -> {
-		});
-
-		Channel channel2 = connection.createChannel();
-
-		channel2.queueDeclare("delete_book", false, false, false, null);
-		System.out.println(" [*] Waiting for messages. To exit press CTRL+C");
-
-		DeliverCallback deliverCallback2 = (consumerTag, delivery) -> {
-			String message = new String(delivery.getBody(), "UTF-8");
-			System.out.println("message   " + message); // '5'
-
-		};
-		channel2.basicConsume("delete_book", true, deliverCallback2, consumerTag -> {
-		});
-
-	}
-
 }
