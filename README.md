@@ -2,6 +2,8 @@
 
 ![architecture](https://raw.githubusercontent.com/ShathaCodes/TheBookBoutique/main/architecture.PNG)
 
+***
+
 We have one model which is `Book`
 ```
 Book(int id, String title, String author, int quantity, String genre)
