@@ -1,6 +1,6 @@
 # The Book Boutique is a website that manages different Books!
 
-![architecture](https://raw.githubusercontent.com/ShathaCodes/TheBookBoutique/main/architecture.PNG)
+![architecture](https://raw.githubusercontent.com/ShathaCodes/TheBookBoutique/main/arch.PNG)
 
 ***
 
